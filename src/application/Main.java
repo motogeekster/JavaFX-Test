@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -11,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
+//import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -21,6 +22,11 @@ import javafx.scene.text.Text;
 
 
 public class Main extends Application {
+	
+	@FXML
+	Button btn;
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("JavaFX Welcome");
@@ -48,6 +54,10 @@ public class Main extends Application {
 		PasswordField pwBox = new PasswordField();
 		grid.add(pwBox, 1, 2);
 
+		
+		
+		
+		
 //		shows grid lines
 //		grid.setGridLinesVisible(true);
 		
@@ -76,6 +86,8 @@ public class Main extends Application {
 //		sets new scene to a default of 300,275
 		Scene scene = new Scene(grid,300,275);
 		primaryStage.setScene(scene);
+//		Css 
+		scene.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
 		
 		
 		primaryStage.show();
